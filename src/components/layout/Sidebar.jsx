@@ -1,9 +1,95 @@
 import { useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
-import { ChevronLeft, ChevronRight, LogIn } from 'lucide-react'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { ChevronLeft, ChevronRight, ChevronDown, LogIn } from 'lucide-react'
 import { cn } from '../../utils/cn'
 import { NAV_ITEMS, EXTRA_NAV_ITEMS, ADMIN_NAV_ITEMS } from '../../utils/constants'
 import { useAuth } from '../../contexts/AuthContext'
+
+function NavItem({ item, collapsed }) {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [open, setOpen] = useState(false)
+
+  const hasChildren = item.children?.length > 0
+  const isActive = location.pathname === item.path
+  const isChildActive = hasChildren && location.pathname === item.path && location.search.includes('tab=')
+
+  // Auto-open dropdown when current page matches
+  const isCurrentSection = location.pathname === item.path
+
+  function handleParentClick(e) {
+    if (hasChildren && !collapsed) {
+      e.preventDefault()
+      setOpen(prev => !prev)
+    }
+  }
+
+  function handleChildClick(tab) {
+    navigate(`${item.path}?tab=${tab}`)
+    setOpen(true)
+  }
+
+  return (
+    <div>
+      {/* Parent Item */}
+      <NavLink
+        to={item.path}
+        end={!hasChildren && item.path === '/'}
+        onClick={handleParentClick}
+        className={({ isActive: linkActive }) =>
+          cn(
+            'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors group',
+            (linkActive || isCurrentSection)
+              ? 'bg-primary-500/20 text-white'
+              : 'text-gray-400 hover:text-white hover:bg-sidebar-hover'
+          )
+        }
+        title={item.label}
+      >
+        <item.icon className="w-5 h-5 flex-shrink-0" />
+        {!collapsed && (
+          <>
+            <span className="truncate flex-1">{item.label}</span>
+            {hasChildren && (
+              <ChevronDown
+                className={cn(
+                  'w-4 h-4 flex-shrink-0 transition-transform duration-200',
+                  (open || isCurrentSection) && 'rotate-180'
+                )}
+              />
+            )}
+          </>
+        )}
+      </NavLink>
+
+      {/* Children Dropdown */}
+      {hasChildren && !collapsed && (open || isCurrentSection) && (
+        <div className="ml-4 mt-1 space-y-0.5 border-l border-gray-700 pl-3">
+          {item.children.map((child) => {
+            const isChildSelected =
+              location.pathname === item.path &&
+              Number(new URLSearchParams(location.search).get('tab')) === child.tab
+
+            return (
+              <button
+                key={child.tab}
+                onClick={() => handleChildClick(child.tab)}
+                className={cn(
+                  'w-full text-left px-3 py-1.5 rounded-md text-xs transition-colors truncate',
+                  isChildSelected
+                    ? 'text-white bg-primary-500/15'
+                    : 'text-gray-500 hover:text-gray-300 hover:bg-sidebar-hover'
+                )}
+              >
+                {child.label}
+              </button>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default function Sidebar({ collapsed, onToggle }) {
   const location = useLocation()
@@ -32,23 +118,7 @@ export default function Sidebar({ collapsed, onToggle }) {
       <nav className="flex-1 overflow-y-auto py-4 px-2">
         <div className="space-y-1">
           {NAV_ITEMS.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              end={item.path === '/'}
-              className={({ isActive }) =>
-                cn(
-                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors',
-                  isActive
-                    ? 'bg-primary-500/20 text-white'
-                    : 'text-gray-400 hover:text-white hover:bg-sidebar-hover'
-                )
-              }
-              title={item.label}
-            >
-              <item.icon className="w-5 h-5 flex-shrink-0" />
-              {!collapsed && <span className="truncate">{item.label}</span>}
-            </NavLink>
+            <NavItem key={item.path} item={item} collapsed={collapsed} />
           ))}
         </div>
 

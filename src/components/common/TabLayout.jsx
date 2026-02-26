@@ -1,8 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { cn } from '../../utils/cn'
 
 export default function TabLayout({ title, subtitle, tabs, sectionColor }) {
-  const [activeTab, setActiveTab] = useState(0)
+  const [searchParams, setSearchParams] = useSearchParams()
+  const tabParam = Number(searchParams.get('tab')) || 0
+  const [activeTab, setActiveTab] = useState(tabParam < tabs.length ? tabParam : 0)
+
+  useEffect(() => {
+    const t = Number(searchParams.get('tab')) || 0
+    if (t < tabs.length) setActiveTab(t)
+  }, [searchParams, tabs.length])
+
+  function handleTabClick(index) {
+    setActiveTab(index)
+    setSearchParams(index === 0 ? {} : { tab: index }, { replace: true })
+  }
 
   return (
     <div className="space-y-6">
@@ -25,7 +38,7 @@ export default function TabLayout({ title, subtitle, tabs, sectionColor }) {
               <button
                 key={index}
                 role="tab"
-                onClick={() => setActiveTab(index)}
+                onClick={() => handleTabClick(index)}
                 className={cn(
                   'py-4 px-4 text-sm font-medium border-b-2 whitespace-nowrap transition-colors',
                   index === activeTab
