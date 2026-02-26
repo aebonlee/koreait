@@ -17,14 +17,14 @@ export default function ContactPage() {
               <MapPin className="w-5 h-5 text-primary-500 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-800">주소</p>
-                <p className="text-sm text-gray-600 mt-0.5">경기도 시흥시 서울대학로 59번길 (배곧동)</p>
+                <p className="text-sm text-gray-600 mt-0.5">서울특별시 마포구 서강로 136 아이비타워 2층, 3층</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Phone className="w-5 h-5 text-primary-500 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-800">전화번호</p>
-                <p className="text-sm text-gray-600 mt-0.5">031-431-1247</p>
+                <p className="text-sm text-gray-600 mt-0.5">02-3482-4632</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -51,7 +51,7 @@ export default function ContactPage() {
             <MapPin className="w-12 h-12 text-gray-300 mb-3" />
             <p className="text-sm text-gray-400">지도 영역</p>
             <a
-              href="https://map.naver.com/v5/search/%EC%97%90%EB%93%80%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B5%90%EC%9C%A1%ED%95%99%EC%9B%90"
+              href="https://map.naver.com/v5/search/%EC%BD%94%EB%A6%AC%EC%95%84IT%EC%95%84%EC%B9%B4%EB%8D%B0%EB%AF%B8%20%EB%A7%88%ED%8F%AC"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 text-sm text-primary-500 hover:text-primary-600 flex items-center gap-1"
@@ -70,18 +70,18 @@ export default function ContactPage() {
             <ul className="text-sm text-gray-600 space-y-2">
               <li className="flex items-start gap-2">
                 <span className="bg-blue-500 text-white text-xs px-1.5 py-0.5 rounded mt-0.5">버스</span>
-                <span>시흥시 배곧 방면 시내버스 이용</span>
+                <span>마포구청, 서강대 방면 시내버스 이용</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="bg-green-500 text-white text-xs px-1.5 py-0.5 rounded mt-0.5">지하철</span>
-                <span>수인분당선 이용 후 버스 환승</span>
+                <span>2호선 신촌역 1번 출구 도보 5분 / 6호선 대흥역 1번 출구 도보 7분</span>
               </li>
             </ul>
           </div>
           <div>
             <h4 className="font-medium text-gray-800 mb-2">자가용</h4>
             <ul className="text-sm text-gray-600 space-y-2">
-              <li>제3경인고속도로 → 배곧 IC 출구 이용</li>
+              <li>신촌로터리 → 서강대 방면 → 서강로 136</li>
               <li>주차: 건물 내 주차장 이용 가능</li>
             </ul>
           </div>

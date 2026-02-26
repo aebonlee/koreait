@@ -37,7 +37,7 @@ function IntroContent() {
         <div className="bg-white border rounded-lg p-4 text-center">
           <Building2 className="w-8 h-8 text-primary-500 mx-auto mb-2" />
           <h4 className="font-semibold text-gray-800">위치</h4>
-          <p className="text-sm text-gray-500 mt-1">경기도 시흥시 배곧</p>
+          <p className="text-sm text-gray-500 mt-1">서울특별시 마포구 서강로 136 아이비타워 2층, 3층</p>
         </div>
         <div className="bg-white border rounded-lg p-4 text-center">
           <Award className="w-8 h-8 text-primary-500 mx-auto mb-2" />

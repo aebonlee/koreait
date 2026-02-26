@@ -50,7 +50,7 @@ const MOCK_NEWS = [
 const MOCK_PARTNERS = [
   { id: 1, name: '한국산업인력공단', type: '정부기관' },
   { id: 2, name: '고용노동부', type: '정부기관' },
-  { id: 3, name: '시흥시청', type: '지자체' },
+  { id: 3, name: '마포구청', type: '지자체' },
   { id: 4, name: '한국직업능력연구원', type: '연구기관' },
   { id: 5, name: '삼성전자', type: '기업' },
   { id: 6, name: 'LG전자', type: '기업' },
