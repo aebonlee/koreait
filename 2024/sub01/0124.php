@@ -1,0 +1,285 @@
+<?php
+include_once('../../common.php');
+
+define('_INDEX_', true);
+if (!defined('_GNUBOARD_'))
+    exit; // 개별 페이지 접근 불가
+
+include_once('./head_detail.php');
+?>
+
+<?php
+if (!$member['mb_id']) {
+    goto_url('../login.php');
+}
+?>
+
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+    /*
+    var g5_url       = "http://born.dreamitbiz.com/2023";
+    var g5_bbs_url   = "http://born.dreamitbiz.com/2023/bbs";
+    var g5_is_member = "1";
+    var g5_is_admin  = "super";
+    var g5_is_mobile = "";
+    var g5_bo_table  = "";
+    var g5_sca       = "";
+    var g5_editor    = "";
+    var g5_cookie_domain = "";
+    var g5_shop_url = "http://born.dreamitbiz.com/2023/shop";
+    var g5_admin_url = "http://born.dreamitbiz.com/2023/adm";
+    */
+</script>
+<script>
+    var g5_admin_csrf_token_key = "438d9141daa45cdfc2b25b222d7ca24f";
+    var tempX = 0;
+    var tempY = 0;
+
+    function imageview(id, w, h) {
+
+        menu(id);
+
+        var el_id = document.getElementById(id);
+
+        //submenu = eval(name+".style");
+        submenu = el_id.style;
+        submenu.left = tempX - (w + 11);
+        submenu.top = tempY - (h / 2);
+
+        selectBoxVisible();
+
+        if (el_id.style.display != 'none')
+            selectBoxHidden(id);
+    }
+</script>
+
+<div id="to_content"><a href="#container">본문 바로가기</a></div>
+
+<script>
+    jQuery(function ($) {
+
+        var menu_cookie_key = 'g5_admin_btn_gnb';
+
+        $(".tnb_mb_btn").click(function () {
+            $(".tnb_mb_area").toggle();
+        });
+
+        $("#btn_gnb").click(function () {
+
+            var $this = $(this);
+
+            try {
+                if (!$this.hasClass("btn_gnb_open")) {
+                    set_cookie(menu_cookie_key, 1, 60 * 60 * 24 * 365);
+                } else {
+                    delete_cookie(menu_cookie_key);
+                }
+            } catch (err) { }
+
+            $("#container").toggleClass("container-small");
+            $("#gnb").toggleClass("gnb_small");
+            $this.toggleClass("btn_gnb_open");
+
+        });
+
+        $(".gnb_ul li .btn_op").click(function () {
+            $(this).parent().addClass("on").siblings().removeClass("on");
+        });
+
+    });
+</script>
+
+
+<div id="wrapper">
+
+    <div id="container" class="<?php echo $adm_menu_cookie['container']; ?>">
+
+        <h1 id="container_title">기관경영</h1>
+        <div class="container_wr">
+<section>
+			<h2>학원원칙</h2>
+			<div class="local_desc02 local_desc">
+<spen>설립이념</spen><br>
+<spen>한국정보과학진흥협회는 2003년 설립된 민간단체인 ‘한국정보교육협회’를 모체로 문화가 기술을 만들고 기술이 산업을 떠 받치는 사람 중심 정보문화 진흥으로 기초과학의 발전과 청소년 이공계진출 확대를 목표 일환으로 2006년 과학기술부장관의 승인을 받아 설립하였다.</spen> <br>
+<br>
+<spen>경영원칙</spen>  <br>
+<spen>국가적 역량을 갖춘 인재양성을 목표로 다양한 교육훈련과정을 개발 개개인의 능력(지식,기술,태도)을 향상시키기 위한 HRD과정을 운영한다.</spen><br>
+
+정보과학 연구 및 기술의 발전과 소프트웨어 전문기업 육성, 청소년 이공계 진로지도를 통한 국가경쟁력 강화에 이바지 하자는 투철한 사명감과 발전의식을 가지고 (사)한국정보과학진흥협회의 부설 평생교육기관으로 인재양성 교육을 위해 인재개발원을 설립하였다.<br>
+<br>
+목표1. 이론 및 실습을 바탕으로 기업체 현장에서 필요로 하는 기술인을 양성한다.<br>
+목표2. 변화하는 사회에 능동적으로 적응할 수 있는 인재를 길러낸다.<br>
+목표3. 개인의 다양성을 존중하여 창조적 기술인을 양성한다.<br>
+<br>
+■ 원장은 임기 중 본원을 운영하며 고용노동부 정책설명회 및 직업훈련 관련 사업신청 등과 관련한 모든 설명회 등에 빠짐없이 참여하였으며, 교·강사들과 적극적으로 회의하여, 최신 정보를 정확하게 기관 운영에 반영함. <br>
+■ 최신의 정확한 전달 정보와 지침을 확인하여 정부정책의 이해와 이를 반영한 직업훈련 사업을 운영하기 위해 기준을 마련하고, 정기적인 회의와 홍보를 진행하고 있음.<br>
+■ 조직운영에 있어 교·강사 역량을 강화하도록 지원하고 있으며, 내부소통을 중요시하여 간부모임, 전교·강사모임을 정기적으로 진행하고 있음.<br>
+■ 직업훈련, 평생교육, 일자리 창출, 일학습 병행제, 선 취업후 교육 등의 제도를 잘 인지하고 있으며, 적극 반영하여 본원에 다양한 사업을 실시하도록 많은 노력을 기울였고, 좋은 성과로 매년 발전하고 있음.<br>
+■ 법과 규정 위반의 사례가 없으며 애매한 상황이 발생 시 반드시 사전에 고용센터 담당자에게 문의하여 작은 것이라도 알리고 조언 받은 대로 행하고 있음.<br>
+■ 기업체에서 대우받는 전문 기술人 및 실업극복<br>
+<br>
+KISE인재개발원은 교육품질을 극대화하여 고품질의 교육과정과, 수준 높은 강의, 쾌적한 학습환경을 바탕으로, “기업체에서 대우받는 전문 기술인 및 실업극복”이라는 평범한 교육이념을 실천하고자 한다.<br>
+<br>
+■ 꿈과 희망이 이루어지는 기술 교육<br>
+“살아 있는 기술교육” : 기업현장에서 실무를 직접 처리할 수 있는 인재 양성 교육 <br>
+“전문글로벌 기술교육” : 전문화 다양화 교육을 통한 전문 인재 양성 교육<br>
+“겸손 봉사 실천교육” : 여유를 선택하고 베풂을 나누는 교양인 양성 교육<br>
+<br>
+이라는 교훈 아래, 기업체와 본교의 유기적인 수요조사를 통하여 맞춤식 교육을 통하여 기업체, 교육생, 본원 모두가 꿈을 이루어가는 즐거움을 갖고자 한다.<br>
+  - 살아 있는 기술 교육을 통한 우수 인력 배출로 기업체 만족도 제고.<br>
+  - 체계적인 학사운영 시스템으로 기업체에 맞춤식 인재 매칭.<br>
+  - 질 높은 직무향상교육과 능력개발 프로그램으로 Top 교·강사 육성.<br>
+<br>
+■ 기업체 + 훈련생 상생하는 기술 교육<br>
+  - 기업체와 훈련생들의 니즈를 분석하여 그에 맞추어 지속적인 자기발전을 위한 노력에 대한 프로 마인드 함양.<br>
+  - 스스로 지속적인 성장을 위한 멘토링 시스템을 제공하여 사회인으로 자리잡고 경제활동을 할 수 있는 인재로 성장시킴.<br>
+
+			</div>
+		</section>
+		</div>
+	</div>
+</div>
+<footer id="ft">
+    <p>
+        Copyright &copy; born.dreamitbiz.com. All rights reserved. Version 5.5.8.3<br>
+        <button type="button" class="scroll_top" style="cursor:pointer;" onclick="window.scrollTo(0,0);"><span class="top_img"></span><span class="top_txt">TOP</span></button>
+    </p>
+</footer>
+
+</div>
+
+</div>
+
+<script>
+    $(".scroll_top").click(function() {
+        $("body,html").animate({
+            scrollTop: 0
+        }, 400);
+    })
+</script>
+
+<!-- <p>실행시간 : 0.0010840892791748 -->
+
+<script src="http://born.dreamitbiz.com/2023/adm/admin.js?ver=2304171"></script>
+<script src="http://born.dreamitbiz.com/2023/js/jquery.anchorScroll.js?ver=2304171"></script>
+<script>
+    $(function() {
+
+        var admin_head_height = $("#hd_top").height() + $("#container_title").height() + 5;
+
+        $("a[href^='#']").anchorScroll({
+            scrollSpeed: 0, // scroll speed
+            offsetTop: admin_head_height, // offset for fixed top bars (defaults to 0)
+            onScroll: function() {
+                // callback on scroll start
+            },
+            scrollEnd: function() {
+                // callback on scroll end
+            }
+        });
+
+        var hide_menu = false;
+        var mouse_event = false;
+        var oldX = oldY = 0;
+
+        $(document).mousemove(function(e) {
+            if (oldX == 0) {
+                oldX = e.pageX;
+                oldY = e.pageY;
+            }
+
+            if (oldX != e.pageX || oldY != e.pageY) {
+                mouse_event = true;
+            }
+        });
+
+        // 주메뉴
+        var $gnb = $(".gnb_1dli > a");
+        $gnb.mouseover(function() {
+            if (mouse_event) {
+                $(".gnb_1dli").removeClass("gnb_1dli_over gnb_1dli_over2 gnb_1dli_on");
+                $(this).parent().addClass("gnb_1dli_over gnb_1dli_on");
+                menu_rearrange($(this).parent());
+                hide_menu = false;
+            }
+        });
+
+        $gnb.mouseout(function() {
+            hide_menu = true;
+        });
+
+        $(".gnb_2dli").mouseover(function() {
+            hide_menu = false;
+        });
+
+        $(".gnb_2dli").mouseout(function() {
+            hide_menu = true;
+        });
+
+        $gnb.focusin(function() {
+            $(".gnb_1dli").removeClass("gnb_1dli_over gnb_1dli_over2 gnb_1dli_on");
+            $(this).parent().addClass("gnb_1dli_over gnb_1dli_on");
+            menu_rearrange($(this).parent());
+            hide_menu = false;
+        });
+
+        $gnb.focusout(function() {
+            hide_menu = true;
+        });
+
+        $(".gnb_2da").focusin(function() {
+            $(".gnb_1dli").removeClass("gnb_1dli_over gnb_1dli_over2 gnb_1dli_on");
+            var $gnb_li = $(this).closest(".gnb_1dli").addClass("gnb_1dli_over gnb_1dli_on");
+            menu_rearrange($(this).closest(".gnb_1dli"));
+            hide_menu = false;
+        });
+
+        $(".gnb_2da").focusout(function() {
+            hide_menu = true;
+        });
+
+        $('#gnb_1dul>li').bind('mouseleave', function() {
+            submenu_hide();
+        });
+
+        $(document).bind('click focusin', function() {
+            if (hide_menu) {
+                submenu_hide();
+            }
+        });
+
+        // 폰트 리사이즈 쿠키있으면 실행
+        var font_resize_act = get_cookie("ck_font_resize_act");
+        if (font_resize_act != "") {
+            font_resize("container", font_resize_act);
+        }
+    });
+
+    function submenu_hide() {
+        $(".gnb_1dli").removeClass("gnb_1dli_over gnb_1dli_over2 gnb_1dli_on");
+    }
+
+    function menu_rearrange(el) {
+        var width = $("#gnb_1dul").width();
+        var left = w1 = w2 = 0;
+        var idx = $(".gnb_1dli").index(el);
+
+        for (i = 0; i <= idx; i++) {
+            w1 = $(".gnb_1dli:eq(" + i + ")").outerWidth();
+            w2 = $(".gnb_2dli > a:eq(" + i + ")").outerWidth(true);
+
+            if ((left + w2) > width) {
+                el.removeClass("gnb_1dli_over").addClass("gnb_1dli_over2");
+            }
+
+            left += w1;
+        }
+    }
+</script>
+
+
+<!-- <div style='float:left; text-align:center;'>RUN TIME : 0.0011570453643799<br></div> -->
+
+<?php
+include_once('../tail.php');
+?>

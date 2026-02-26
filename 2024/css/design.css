@@ -1,0 +1,58 @@
+#tabMenu {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+#tabMenu input[type="radio"] {
+    display: none;
+}
+#tabMenu label {
+    display: inline-block;
+    margin: 0 0;
+    padding: 12px 12px;
+    font-weight: 600;
+    text-align: center;
+    color: #aaa;
+    border: 1px solid transparent;
+}
+#tabMenu label:hover {
+    color: #222;
+    cursor: pointer;
+}
+#tabMenu input:checked + label {
+    color: darkblue;
+    border: 1px solid #ddd;
+    background-color: MintCream;
+}
+.tabContent {
+    display: none;
+    padding: 3px 0 0;
+    border-top: 1px solid #ddd;
+}
+.tabContent h2 {
+	font-weight: 400;
+	font-size : 12px;
+	margin-left: 11px;
+    color: #888;
+}
+#notice ul {
+    list-style: disc;
+    margin-left: 30px;
+}
+#notice ul li {
+    font-size: 16px;
+    line-height: 2.5;
+}
+#gallery ul li {
+    display: inline;
+}
+#tab1:checked ~ #notice,
+#tab2:checked ~ #gallery,
+#tab3:checked ~ #gallery2,
+#tab4:checked ~ #gallery3,
+#tab5:checked ~ #gallery4,
+#tab6:checked ~ #gallery5,
+#tab7:checked ~ #gallery6{
+    display: block;
+}

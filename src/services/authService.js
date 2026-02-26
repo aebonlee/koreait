@@ -1,0 +1,77 @@
+import { supabase } from './supabase'
+
+export async function signInWithGoogle() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: window.location.origin,
+    },
+  })
+  if (error) throw error
+  return data
+}
+
+export async function signInWithKakao() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'kakao',
+    options: {
+      redirectTo: window.location.origin,
+    },
+  })
+  if (error) throw error
+  return data
+}
+
+export async function signInWithEmail(email, password) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  })
+  if (error) throw error
+  return data
+}
+
+export async function signUp(email, password, name) {
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { full_name: name },
+    },
+  })
+  if (error) throw error
+  return data
+}
+
+export async function signOut() {
+  const { error } = await supabase.auth.signOut()
+  if (error) throw error
+}
+
+export async function resetPassword(email) {
+  const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${window.location.origin}/login`,
+  })
+  if (error) throw error
+  return data
+}
+
+export async function getUserProfile(userId) {
+  const { data, error } = await supabase
+    .from('user_profiles')
+    .select('*')
+    .eq('id', userId)
+    .single()
+  if (error && error.code !== 'PGRST116') throw error
+  return data
+}
+
+export async function upsertUserProfile(profile) {
+  const { data, error } = await supabase
+    .from('user_profiles')
+    .upsert(profile)
+    .select()
+    .single()
+  if (error) throw error
+  return data
+}
