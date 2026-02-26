@@ -141,11 +141,56 @@ function requireSupabase() {
 
 ---
 
+## 2026-02-26 - 사이드바 스타일 & UX 개선
+
+### 수정 내용
+1. **폰트 가시성 향상**: 사이드바 메뉴 폰트를 더 밝고 굵게 변경
+   - 부모 메뉴: `text-gray-400` → `text-gray-200` + `font-semibold`
+   - 하위 항목: `text-gray-500` → `text-gray-300` + `font-medium`
+2. **아코디언 동작**: 드롭다운 메뉴가 하나만 열리도록 수정
+   - `openPath` 상태를 NavItem에서 Sidebar 부모로 리프팅
+3. **자동 닫힘**: 다른 페이지 이동 시 드롭다운 자동 접힘
+   - `useEffect`로 `location.pathname` 감시하여 `openPath` 자동 동기화
+
+**커밋**: `6d82bf5` ~ `8e94e9e` (style + fix 3건)
+
+---
+
+## 2026-02-27 - 브랜딩 통일 (명칭/주소/사업자정보)
+
+### 수정 내용
+1. **명칭 변경**: `에듀컴퓨터교육학원` → `코리아IT아카데미` (11개 파일)
+2. **주소 변경**: 경기도 시흥시 배곧 주소 → `서울특별시 마포구 서강로 136 아이비타워 2층, 3층`
+3. **사업자 정보 반영** (Footer, ContactPage, StaffPage, admin.js):
+   - 사업자(법인)명: ㈜코리아정보보안아이티아카데미신촌
+   - 사업자번호: 325-88-00678
+   - 통신판매업번호: 제2019-서울마포-0303호
+   - 대표자: 김홍구 / 개인정보책임자: 최인욱
+   - 학원명: 코리아아이티(IT)아카데미학원
+   - 학원등록번호: 서울서부 제02201700141호
+   - 전화: 02-313-7300 / E-mail: ciu@koreaedugroup.com
+   - 대표 블로그: https://blog.naver.com/sunsoo2002
+4. **EduCom → KoreaIT**: 갤러리, 자위소방대 등 5개 파일 명칭 통일
+
+### 변경 파일
+- `src/components/layout/Footer.jsx` - 사업자/학원 정보 2단 레이아웃
+- `src/pages/ContactPage.jsx` - 연락처 + 학원 정보 카드
+- `src/pages/StaffPage.jsx` - 교직원 정보 (김홍구 대표, 최인욱 개인정보책임자)
+- `src/config/admin.js` - 관리자 이메일 변경
+- `src/utils/constants.js` - KoreaIT 갤러리
+- `src/pages/InfraPage.jsx` - KoreaIT 자위소방대
+- `src/pages/StudentPage.jsx` - KoreaIT 갤러리
+- `index.html`, `src/pages/AboutPage.jsx`, `src/pages/DashboardPage.jsx`, `src/pages/LoginPage.jsx`, `src/pages/NewsPage.jsx`, `src/pages/CoursesPage.jsx`, `src/services/dashboardService.js`
+
+**커밋**: `ee5f68b` ~ `d726c23` (refactor + update 4건)
+
+---
+
 ## 빌드 결과 (최신)
 - `npm run build` 성공
-- JS 번들: 711.33 KB (gzip: 199.76 KB)
-- CSS 번들: 24.17 KB (gzip: 5.09 KB)
-- 빌드 시간: ~6.6초
+- JS 번들: 716.59 KB (gzip: 200.80 KB)
+- CSS 번들: 24.32 KB (gzip: 5.12 KB)
+- 빌드 시간: ~6.2초
 
 ## 배포 현황
 - **리포지토리**: https://github.com/aebonlee/koreait
