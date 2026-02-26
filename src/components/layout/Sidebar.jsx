@@ -38,10 +38,10 @@ function NavItem({ item, collapsed }) {
         onClick={handleParentClick}
         className={({ isActive: linkActive }) =>
           cn(
-            'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors group',
+            'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold transition-colors group',
             (linkActive || isCurrentSection)
               ? 'bg-primary-500/20 text-white'
-              : 'text-gray-400 hover:text-white hover:bg-sidebar-hover'
+              : 'text-gray-200 hover:text-white hover:bg-sidebar-hover'
           )
         }
         title={item.label}
@@ -75,10 +75,10 @@ function NavItem({ item, collapsed }) {
                 key={child.tab}
                 onClick={() => handleChildClick(child.tab)}
                 className={cn(
-                  'w-full text-left px-3 py-1.5 rounded-md text-xs transition-colors truncate',
+                  'w-full text-left px-3 py-1.5 rounded-md text-xs font-medium transition-colors truncate',
                   isChildSelected
-                    ? 'text-white bg-primary-500/15'
-                    : 'text-gray-500 hover:text-gray-300 hover:bg-sidebar-hover'
+                    ? 'text-white font-semibold bg-primary-500/15'
+                    : 'text-gray-300 hover:text-white hover:bg-sidebar-hover'
                 )}
               >
                 {child.label}
@@ -133,10 +133,10 @@ export default function Sidebar({ collapsed, onToggle }) {
               to={item.path}
               className={({ isActive }) =>
                 cn(
-                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors',
+                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold transition-colors',
                   isActive
                     ? 'bg-primary-500/20 text-white'
-                    : 'text-gray-400 hover:text-white hover:bg-sidebar-hover'
+                    : 'text-gray-200 hover:text-white hover:bg-sidebar-hover'
                 )
               }
               title={item.label}
@@ -158,10 +158,10 @@ export default function Sidebar({ collapsed, onToggle }) {
                   to={item.path}
                   className={({ isActive }) =>
                     cn(
-                      'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors',
+                      'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold transition-colors',
                       isActive
                         ? 'bg-orange-500/20 text-orange-300'
-                        : 'text-gray-400 hover:text-white hover:bg-sidebar-hover'
+                        : 'text-gray-200 hover:text-white hover:bg-sidebar-hover'
                     )
                   }
                   title={item.label}
@@ -182,10 +182,10 @@ export default function Sidebar({ collapsed, onToggle }) {
               to="/login"
               className={({ isActive }) =>
                 cn(
-                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors',
+                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold transition-colors',
                   isActive
                     ? 'bg-primary-500/20 text-white'
-                    : 'text-gray-400 hover:text-white hover:bg-sidebar-hover'
+                    : 'text-gray-200 hover:text-white hover:bg-sidebar-hover'
                 )
               }
               title="로그인"
