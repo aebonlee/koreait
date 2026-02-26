@@ -1,6 +1,11 @@
-import { supabase } from './supabase'
+import { supabase, supabaseEnabled } from './supabase'
+
+function requireSupabase() {
+  if (!supabaseEnabled) throw new Error('Supabase가 설정되지 않았습니다. .env 파일을 확인하세요.')
+}
 
 export async function signInWithGoogle() {
+  requireSupabase()
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
@@ -12,6 +17,7 @@ export async function signInWithGoogle() {
 }
 
 export async function signInWithKakao() {
+  requireSupabase()
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'kakao',
     options: {
@@ -23,6 +29,7 @@ export async function signInWithKakao() {
 }
 
 export async function signInWithEmail(email, password) {
+  requireSupabase()
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password,
@@ -32,6 +39,7 @@ export async function signInWithEmail(email, password) {
 }
 
 export async function signUp(email, password, name) {
+  requireSupabase()
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
@@ -44,11 +52,13 @@ export async function signUp(email, password, name) {
 }
 
 export async function signOut() {
+  requireSupabase()
   const { error } = await supabase.auth.signOut()
   if (error) throw error
 }
 
 export async function resetPassword(email) {
+  requireSupabase()
   const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
     redirectTo: `${window.location.origin}/login`,
   })
@@ -57,6 +67,7 @@ export async function resetPassword(email) {
 }
 
 export async function getUserProfile(userId) {
+  requireSupabase()
   const { data, error } = await supabase
     .from('user_profiles')
     .select('*')
@@ -67,6 +78,7 @@ export async function getUserProfile(userId) {
 }
 
 export async function upsertUserProfile(profile) {
+  requireSupabase()
   const { data, error } = await supabase
     .from('user_profiles')
     .upsert(profile)

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { supabase } from '../services/supabase'
+import { supabase, supabaseEnabled } from '../services/supabase'
 import { getUserProfile, upsertUserProfile } from '../services/authService'
 import { isAdminEmail } from '../config/admin'
 
@@ -12,6 +12,11 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if (!supabaseEnabled) {
+      setLoading(false)
+      return
+    }
+
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session?.user) {
         handleUser(session.user)

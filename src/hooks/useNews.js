@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '../services/supabase'
+import { supabase, supabaseEnabled } from '../services/supabase'
 
 export function useNews(limit = 10) {
   const [news, setNews] = useState([])
@@ -7,6 +7,10 @@ export function useNews(limit = 10) {
 
   useEffect(() => {
     async function loadNews() {
+      if (!supabaseEnabled) {
+        setLoading(false)
+        return
+      }
       try {
         const { data, error } = await supabase
           .from('news')

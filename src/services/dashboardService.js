@@ -1,4 +1,4 @@
-import { supabase } from './supabase'
+import { supabase, supabaseEnabled } from './supabase'
 
 // Mock data for initial development (before DB is seeded)
 const MOCK_KPI = [
@@ -67,6 +67,7 @@ const MOCK_ACTIVITY = [
 ]
 
 export async function fetchKPIStats() {
+  if (!supabaseEnabled) return MOCK_KPI
   try {
     const { data, error } = await supabase.from('kpi_stats').select('*').order('id')
     if (error) throw error
@@ -77,6 +78,7 @@ export async function fetchKPIStats() {
 }
 
 export async function fetchEnrollmentStats() {
+  if (!supabaseEnabled) return MOCK_ENROLLMENT
   try {
     const { data, error } = await supabase.from('enrollment_stats').select('*').order('month')
     if (error) throw error
@@ -87,6 +89,7 @@ export async function fetchEnrollmentStats() {
 }
 
 export async function fetchEmploymentStats() {
+  if (!supabaseEnabled) return MOCK_EMPLOYMENT
   try {
     const { data, error } = await supabase.from('employment_stats').select('*')
     if (error) throw error
@@ -97,6 +100,7 @@ export async function fetchEmploymentStats() {
 }
 
 export async function fetchCourseStats() {
+  if (!supabaseEnabled) return MOCK_COURSES
   try {
     const { data, error } = await supabase.from('courses').select('*').order('name')
     if (error) throw error
@@ -107,6 +111,7 @@ export async function fetchCourseStats() {
 }
 
 export async function fetchNews() {
+  if (!supabaseEnabled) return MOCK_NEWS
   try {
     const { data, error } = await supabase.from('news').select('*').order('date', { ascending: false }).limit(5)
     if (error) throw error
@@ -117,6 +122,7 @@ export async function fetchNews() {
 }
 
 export async function fetchPartners() {
+  if (!supabaseEnabled) return MOCK_PARTNERS
   try {
     const { data, error } = await supabase.from('partners').select('*').order('name')
     if (error) throw error
@@ -127,6 +133,7 @@ export async function fetchPartners() {
 }
 
 export async function fetchActivityLog() {
+  if (!supabaseEnabled) return MOCK_ACTIVITY
   try {
     const { data, error } = await supabase.from('activity_log').select('*').order('created_at', { ascending: false }).limit(5)
     if (error) throw error
