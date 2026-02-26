@@ -78,11 +78,11 @@ function OrgChartContent() {
       <h3 className="text-lg font-semibold">조직도 (직제규정)</h3>
       <div className="flex flex-col items-center py-8">
         <div className="bg-primary-500 text-white px-8 py-3 rounded-lg font-bold text-center">
-          원장<br/><span className="text-sm font-normal">김귀환</span>
+          원장<br/><span className="text-sm font-normal">최인욱</span>
         </div>
         <div className="w-px h-8 bg-gray-300" />
         <div className="bg-primary-400 text-white px-8 py-3 rounded-lg font-bold text-center">
-          부원장<br/><span className="text-sm font-normal">김경민</span>
+          부원장<br/><span className="text-sm font-normal">안혁환</span>
         </div>
         <div className="w-px h-8 bg-gray-300" />
         <div className="flex gap-8">

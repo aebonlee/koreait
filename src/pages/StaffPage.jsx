@@ -19,12 +19,12 @@ function TaskAssignment() {
           <tbody className="divide-y divide-gray-100">
             <tr className="hover:bg-gray-50">
               <td className="px-4 py-3 font-medium text-gray-800">원장</td>
-              <td className="px-4 py-3 text-gray-700">김귀환</td>
+              <td className="px-4 py-3 text-gray-700">최인욱</td>
               <td className="px-4 py-3 text-gray-600">기관 총괄경영, 대외협력, 인사관리</td>
             </tr>
             <tr className="hover:bg-gray-50">
               <td className="px-4 py-3 font-medium text-gray-800">부원장</td>
-              <td className="px-4 py-3 text-gray-700">김경민</td>
+              <td className="px-4 py-3 text-gray-700">안혁환</td>
               <td className="px-4 py-3 text-gray-600">교육과정 관리, 학생관리, 행정업무 총괄</td>
             </tr>
             <tr className="hover:bg-gray-50">

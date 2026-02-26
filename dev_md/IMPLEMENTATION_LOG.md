@@ -228,6 +228,19 @@ function requireSupabase() {
 
 ---
 
+## 2026-02-27 - 교직원 인명 변경
+
+### 수정 내용
+- **김귀환 → 최인욱**: 원장 이름 변경 (조직도, 업무분장표)
+- **김경민 → 안혁환**: 부원장 이름 변경 (조직도, 업무분장표, 활동 타임라인)
+
+### 변경 파일 (3개)
+- `src/pages/AboutPage.jsx` - 조직도 원장/부원장 이름
+- `src/pages/StaffPage.jsx` - 업무분장표 원장/부원장 이름
+- `src/services/dashboardService.js` - 활동 타임라인 부원장 이름
+
+---
+
 ## 빌드 결과 (최신)
 - `npm run build` 성공
 - JS 번들: 721.99 KB (gzip: 202.03 KB)

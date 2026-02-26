@@ -61,7 +61,7 @@ const MOCK_PARTNERS = [
 const MOCK_ACTIVITY = [
   { id: 1, action: 'ITQ 엑셀 과정 신규 개강', time: '2시간 전', type: 'course' },
   { id: 2, action: '취업처 발굴: (주)테크솔루션 협약', time: '5시간 전', type: 'partner' },
-  { id: 3, action: '김경민 부원장 직무연수 수료', time: '1일 전', type: 'staff' },
+  { id: 3, action: '안혁환 부원장 직무연수 수료', time: '1일 전', type: 'staff' },
   { id: 4, action: '2024 하반기 훈련계획서 제출', time: '2일 전', type: 'document' },
   { id: 5, action: '안전점검 완료 (소방시설)', time: '3일 전', type: 'infra' },
 ]
