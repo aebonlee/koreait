@@ -6,7 +6,7 @@ function IntroContent() {
   return (
     <div className="space-y-6">
       <div className="bg-gradient-to-r from-primary-50 to-primary-100/50 rounded-lg p-6">
-        <h3 className="text-lg font-bold text-primary-800 mb-4">에듀컴퓨터교육학원 소개</h3>
+        <h3 className="text-lg font-bold text-primary-800 mb-4">코리아IT아카데미 소개</h3>
         <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
           <div>
             <h4 className="font-semibold text-primary-700 mb-1">설립정신</h4>
@@ -59,7 +59,7 @@ function ManagementContent() {
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">경영원칙</h3>
       <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-3">
-        <p>에듀컴퓨터교육학원은 다음의 경영원칙을 기반으로 운영합니다:</p>
+        <p>코리아IT아카데미은 다음의 경영원칙을 기반으로 운영합니다:</p>
         <ul className="list-disc pl-5 space-y-2">
           <li><strong>투명한 경영</strong> - 모든 운영과정의 투명성 확보</li>
           <li><strong>학생 중심</strong> - 학생의 성장과 취업을 최우선 가치로</li>
@@ -129,7 +129,7 @@ function RegulationsContent() {
       <h3 className="text-lg font-semibold">운영규정 (경영원칙)</h3>
       <div className="space-y-3">
         {[
-          { title: '기관운영규정', desc: '에듀컴퓨터교육학원 운영에 관한 기본 규정' },
+          { title: '기관운영규정', desc: '코리아IT아카데미 운영에 관한 기본 규정' },
           { title: '훈련운영절차서', desc: '직업능력개발훈련 운영 절차 및 프로세스' },
           { title: '특성화전략 (추진계획)', desc: '기관 특성화를 위한 중장기 추진 계획' },
           { title: '문서관리규정', desc: '기관 내 문서의 작성, 보관, 폐기 관련 규정' },
@@ -179,7 +179,7 @@ export default function AboutPage() {
   return (
     <TabLayout
       title="Ⅰ. 기관경영"
-      subtitle="에듀컴퓨터교육학원 기관경영 관련 자료"
+      subtitle="코리아IT아카데미 기관경영 관련 자료"
       tabs={tabs}
       sectionColor={SECTION_COLORS.sub01}
     />

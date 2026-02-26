@@ -40,7 +40,7 @@ function TaskAssignment() {
 
 function StaffProfiles() {
   const staffList = [
-    { name: '김귀환', role: '원장', desc: '에듀컴퓨터교육학원 설립자, 기관 총괄 경영', certs: ['직업능력개발훈련교사', '정보처리기사'] },
+    { name: '김귀환', role: '원장', desc: '코리아IT아카데미 설립자, 기관 총괄 경영', certs: ['직업능력개발훈련교사', '정보처리기사'] },
     { name: '김경민', role: '부원장', desc: '교육과정 관리 및 행정업무 총괄', certs: ['직업능력개발훈련교사', '사무자동화산업기사'] },
     { name: '이애본', role: '훈련교사', desc: 'IT 과정 교육 및 교안 개발', certs: ['직업능력개발훈련교사', '정보처리기사', '웹디자인기능사'] },
   ]

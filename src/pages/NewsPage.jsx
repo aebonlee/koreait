@@ -28,7 +28,7 @@ export default function NewsPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">공지사항 / 뉴스</h1>
-        <p className="text-sm text-gray-500 mt-1">에듀컴퓨터교육학원의 최신 소식</p>
+        <p className="text-sm text-gray-500 mt-1">코리아IT아카데미의 최신 소식</p>
       </div>
 
       {/* Filters */}

@@ -18,7 +18,7 @@ function DevelopmentProcess() {
       </div>
       <div className="bg-orange-50 rounded-lg p-4 mt-4">
         <p className="text-sm text-gray-700 leading-relaxed">
-          에듀컴퓨터교육학원은 체계적인 훈련과정 개발절차를 통해 산업현장의 수요에 맞는
+          코리아IT아카데미은 체계적인 훈련과정 개발절차를 통해 산업현장의 수요에 맞는
           고품질 교육훈련과정을 개발하고 운영합니다. 훈련수요 조사부터 과정 평가까지
           일관된 프로세스를 유지합니다.
         </p>

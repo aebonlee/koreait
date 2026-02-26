@@ -113,7 +113,7 @@ export default function Sidebar({ collapsed, onToggle }) {
             <span className="text-white font-bold text-sm">E</span>
           </div>
           {!collapsed && (
-            <span className="text-white font-semibold text-sm whitespace-nowrap">에듀컴퓨터교육학원</span>
+            <span className="text-white font-semibold text-sm whitespace-nowrap">코리아IT아카데미</span>
           )}
         </div>
       </div>

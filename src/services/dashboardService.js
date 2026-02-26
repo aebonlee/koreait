@@ -43,7 +43,7 @@ const MOCK_NEWS = [
   { id: 1, title: '2024년 하반기 국비지원 훈련과정 안내', date: '2024-07-15', category: '공지' },
   { id: 2, title: 'ITQ 자격증 시험 일정 변경 안내', date: '2024-07-10', category: '시험' },
   { id: 3, title: '여름방학 특강 프로그램 개설', date: '2024-07-05', category: '과정' },
-  { id: 4, title: '에듀컴퓨터교육학원 MOU 체결 기업 추가', date: '2024-06-28', category: '협력' },
+  { id: 4, title: '코리아IT아카데미 MOU 체결 기업 추가', date: '2024-06-28', category: '협력' },
   { id: 5, title: '교직원 역량강화 워크숍 개최', date: '2024-06-20', category: '내부' },
 ]
 

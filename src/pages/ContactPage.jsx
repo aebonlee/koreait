@@ -6,7 +6,7 @@ export default function ContactPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">오시는 길</h1>
-        <p className="text-sm text-gray-500 mt-1">에듀컴퓨터교육학원 위치 및 연락처</p>
+        <p className="text-sm text-gray-500 mt-1">코리아IT아카데미 위치 및 연락처</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

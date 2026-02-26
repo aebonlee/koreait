@@ -52,7 +52,7 @@ export default function LoginPage() {
           <div className="w-16 h-16 bg-primary-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span className="text-white font-bold text-2xl">E</span>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">에듀컴퓨터교육학원</h1>
+          <h1 className="text-2xl font-bold text-gray-900">코리아IT아카데미</h1>
           <p className="text-gray-500 mt-1">KoreaIT Dashboard</p>
         </div>
 
@@ -126,7 +126,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          &copy; {new Date().getFullYear()} 에듀컴퓨터교육학원. All rights reserved.
+          &copy; {new Date().getFullYear()} 코리아IT아카데미. All rights reserved.
         </p>
       </div>
     </div>
