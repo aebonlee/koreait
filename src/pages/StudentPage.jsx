@@ -1,4 +1,5 @@
 import TabLayout from '../components/common/TabLayout'
+import PlaceholderContent from '../components/common/PlaceholderContent'
 import { SECTION_COLORS } from '../utils/constants'
 import { GraduationCap, Handshake, Briefcase, Users, FileText, Image } from 'lucide-react'
 
@@ -99,6 +100,17 @@ export default function StudentPage() {
     { label: '모집/홍보', content: <RecruitmentContent /> },
     { label: '취업지원', content: <EmploymentSupport /> },
     { label: 'KoreaIT 갤러리', content: <GalleryContent /> },
+    { label: '연간 개강계획', content: <PlaceholderContent title="연간 개강계획" /> },
+    { label: '훈련생모집 홍보자료', content: <PlaceholderContent title="훈련생모집 홍보자료" /> },
+    { label: '과정운영실적', content: <PlaceholderContent title="과정운영실적" /> },
+    { label: '훈련생 위탁기관', content: <PlaceholderContent title="훈련생 위탁기관" /> },
+    { label: '훈련생 고충처리', content: <PlaceholderContent title="훈련생 고충처리" /> },
+    { label: '훈련생 상담내역', content: <PlaceholderContent title="훈련생 상담내역" /> },
+    { label: '훈련생 사후관리', content: <PlaceholderContent title="훈련생 사후관리" /> },
+    { label: '과정별 만족도조사', content: <PlaceholderContent title="과정별 만족도조사" /> },
+    { label: '자격증 시험관리', content: <PlaceholderContent title="자격증 시험관리" /> },
+    { label: '훈련생 지원내역', content: <PlaceholderContent title="훈련생 지원내역" /> },
+    { label: '훈련생 선발관련', content: <PlaceholderContent title="훈련생 선발관련" /> },
   ]
 
   return (

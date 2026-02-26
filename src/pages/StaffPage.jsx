@@ -1,4 +1,5 @@
 import TabLayout from '../components/common/TabLayout'
+import PlaceholderContent from '../components/common/PlaceholderContent'
 import { SECTION_COLORS } from '../utils/constants'
 import { User, Award, FileText, Star } from 'lucide-react'
 
@@ -102,6 +103,13 @@ export default function StaffPage() {
     { label: '업무분장규정', content: <TaskAssignment /> },
     { label: '교직원 프로필', content: <StaffProfiles /> },
     { label: '직무평가/역량개발', content: <EvaluationContent /> },
+    { label: '교직원업무분장', content: <PlaceholderContent title="교직원업무분장" /> },
+    { label: '교직원직무평가', content: <PlaceholderContent title="교직원직무평가" /> },
+    { label: '인센티브 지급내역', content: <PlaceholderContent title="인센티브 지급내역" /> },
+    { label: '채용공고/선발기준', content: <PlaceholderContent title="채용공고/선발기준" /> },
+    { label: 'KoreaIT 취업규칙', content: <PlaceholderContent title="KoreaIT 취업규칙" /> },
+    { label: '예비인력풀 구축', content: <PlaceholderContent title="예비인력풀 구축" /> },
+    { label: '교직원 만족도조사', content: <PlaceholderContent title="교직원 만족도조사" /> },
   ]
 
   return (

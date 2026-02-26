@@ -1,5 +1,6 @@
 import { Building2, Award, Users, MapPin, FileText, Shield } from 'lucide-react'
 import TabLayout from '../components/common/TabLayout'
+import PlaceholderContent from '../components/common/PlaceholderContent'
 import { SECTION_COLORS } from '../utils/constants'
 
 function IntroContent() {
@@ -174,6 +175,12 @@ export default function AboutPage() {
     { label: '기관증빙서류', content: <DocumentsContent /> },
     { label: '운영규정', content: <RegulationsContent /> },
     { label: '정보보안', content: <SecurityContent /> },
+    { label: '장기/중기/단기계획', content: <PlaceholderContent title="장기/중기/단기계획" /> },
+    { label: '연간교육훈련 운영계획', content: <PlaceholderContent title="연간교육훈련 운영계획" /> },
+    { label: '교직원 워크샵', content: <PlaceholderContent title="교직원 워크샵" /> },
+    { label: '개인정보실태점검', content: <PlaceholderContent title="개인정보실태점검" /> },
+    { label: '개인정보보안 관리대장', content: <PlaceholderContent title="개인정보보안 관리대장" /> },
+    { label: '인근지역 환경분석', content: <PlaceholderContent title="인근지역 환경분석" /> },
   ]
 
   return (

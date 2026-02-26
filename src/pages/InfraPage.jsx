@@ -1,4 +1,5 @@
 import TabLayout from '../components/common/TabLayout'
+import PlaceholderContent from '../components/common/PlaceholderContent'
 import { SECTION_COLORS } from '../utils/constants'
 import { ShieldCheck, Monitor, Server, FileText, Flame } from 'lucide-react'
 
@@ -137,6 +138,10 @@ export default function InfraPage() {
     { label: '훈련시설 현황', content: <Facilities /> },
     { label: '훈련장비 현황', content: <Equipment /> },
     { label: 'SW 관리대장', content: <SoftwareManagement /> },
+    { label: '안전관리 구난장비', content: <PlaceholderContent title="안전관리 구난장비" /> },
+    { label: '안전관리 점검 내역', content: <PlaceholderContent title="안전관리 점검 내역" /> },
+    { label: '훈련시설 관리 내역', content: <PlaceholderContent title="훈련시설 관리 내역" /> },
+    { label: '훈련장비 관리 내역', content: <PlaceholderContent title="훈련장비 관리 내역" /> },
   ]
 
   return (

@@ -1,4 +1,5 @@
 import TabLayout from '../components/common/TabLayout'
+import PlaceholderContent from '../components/common/PlaceholderContent'
 import { SECTION_COLORS } from '../utils/constants'
 import { ClipboardList, FileCheck, BarChart3, BookOpen } from 'lucide-react'
 
@@ -108,6 +109,15 @@ export default function CoursesPage() {
     { label: '훈련수요 및 요구조사', content: <DemandSurvey /> },
     { label: '훈련운영규정', content: <OperationRules /> },
     { label: '훈련과정 개발내역', content: <CourseHistory /> },
+    { label: '훈련과정개발매뉴얼', content: <PlaceholderContent title="훈련과정개발매뉴얼" /> },
+    { label: '교육훈련 운영계획서', content: <PlaceholderContent title="교육훈련 운영계획서" /> },
+    { label: '교육훈련 운영 회의록', content: <PlaceholderContent title="교육훈련 운영 회의록" /> },
+    { label: '훈련과정일정 수립', content: <PlaceholderContent title="훈련과정일정 수립" /> },
+    { label: '홍보계획수립(실행)', content: <PlaceholderContent title="홍보계획수립(실행)" /> },
+    { label: '이수자평가관련서류', content: <PlaceholderContent title="이수자평가관련서류" /> },
+    { label: '성취도평가규정', content: <PlaceholderContent title="성취도평가규정" /> },
+    { label: '성취도평가결과분석표', content: <PlaceholderContent title="성취도평가결과분석표" /> },
+    { label: '훈련과정 개선 및 반영', content: <PlaceholderContent title="훈련과정 개선 및 반영" /> },
   ]
 
   return (
