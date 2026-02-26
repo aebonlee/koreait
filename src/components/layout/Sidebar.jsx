@@ -5,28 +5,23 @@ import { cn } from '../../utils/cn'
 import { NAV_ITEMS, EXTRA_NAV_ITEMS, ADMIN_NAV_ITEMS } from '../../utils/constants'
 import { useAuth } from '../../contexts/AuthContext'
 
-function NavItem({ item, collapsed }) {
+function NavItem({ item, collapsed, openPath, onToggle }) {
   const location = useLocation()
   const navigate = useNavigate()
-  const [open, setOpen] = useState(false)
 
   const hasChildren = item.children?.length > 0
-  const isActive = location.pathname === item.path
-  const isChildActive = hasChildren && location.pathname === item.path && location.search.includes('tab=')
-
-  // Auto-open dropdown when current page matches
   const isCurrentSection = location.pathname === item.path
+  const isOpen = openPath === item.path || isCurrentSection
 
   function handleParentClick(e) {
     if (hasChildren && !collapsed) {
       e.preventDefault()
-      setOpen(prev => !prev)
+      onToggle(isOpen && !isCurrentSection ? null : item.path)
     }
   }
 
   function handleChildClick(tab) {
     navigate(`${item.path}?tab=${tab}`)
-    setOpen(true)
   }
 
   return (
@@ -54,7 +49,7 @@ function NavItem({ item, collapsed }) {
               <ChevronDown
                 className={cn(
                   'w-4 h-4 flex-shrink-0 transition-transform duration-200',
-                  (open || isCurrentSection) && 'rotate-180'
+                  isOpen && 'rotate-180'
                 )}
               />
             )}
@@ -63,7 +58,7 @@ function NavItem({ item, collapsed }) {
       </NavLink>
 
       {/* Children Dropdown */}
-      {hasChildren && !collapsed && (open || isCurrentSection) && (
+      {hasChildren && !collapsed && isOpen && (
         <div className="ml-4 mt-1 space-y-0.5 border-l border-gray-700 pl-3">
           {item.children.map((child) => {
             const isChildSelected =
@@ -92,8 +87,8 @@ function NavItem({ item, collapsed }) {
 }
 
 export default function Sidebar({ collapsed, onToggle }) {
-  const location = useLocation()
   const { isAuthenticated, isAdmin } = useAuth()
+  const [openPath, setOpenPath] = useState(null)
 
   return (
     <aside
@@ -118,7 +113,13 @@ export default function Sidebar({ collapsed, onToggle }) {
       <nav className="flex-1 overflow-y-auto py-4 px-2">
         <div className="space-y-1">
           {NAV_ITEMS.map((item) => (
-            <NavItem key={item.path} item={item} collapsed={collapsed} />
+            <NavItem
+              key={item.path}
+              item={item}
+              collapsed={collapsed}
+              openPath={openPath}
+              onToggle={setOpenPath}
+            />
           ))}
         </div>
 
