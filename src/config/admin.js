@@ -1,6 +1,6 @@
 export const ADMIN_EMAILS = [
   'aebonlee@gmail.com',
-  'admin@educomputer.co.kr',
+  'ciu@koreaedugroup.com',
 ]
 
 export function isAdminEmail(email) {

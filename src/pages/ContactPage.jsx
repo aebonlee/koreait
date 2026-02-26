@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, ExternalLink, Globe, User, FileText, Building2 } from 'lucide-react'
 import Card from '../components/ui/Card'
 
 export default function ContactPage() {
@@ -24,14 +24,14 @@ export default function ContactPage() {
               <Phone className="w-5 h-5 text-primary-500 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-800">전화번호</p>
-                <p className="text-sm text-gray-600 mt-0.5">02-3482-4632</p>
+                <p className="text-sm text-gray-600 mt-0.5">02-313-7300</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Mail className="w-5 h-5 text-primary-500 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-800">이메일</p>
-                <p className="text-sm text-gray-600 mt-0.5">admin@educomputer.co.kr</p>
+                <p className="text-sm text-gray-600 mt-0.5">ciu@koreaedugroup.com</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -40,6 +40,20 @@ export default function ContactPage() {
                 <p className="font-medium text-gray-800">운영시간</p>
                 <p className="text-sm text-gray-600 mt-0.5">월~금 09:00 ~ 21:00 / 토 09:00 ~ 18:00</p>
                 <p className="text-sm text-gray-400">일요일 및 공휴일 휴무</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Globe className="w-5 h-5 text-primary-500 mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-800">대표 블로그</p>
+                <a
+                  href="https://blog.naver.com/sunsoo2002"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary-500 hover:underline flex items-center gap-1 mt-0.5"
+                >
+                  blog.naver.com/sunsoo2002 <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
             </div>
           </div>
@@ -61,6 +75,65 @@ export default function ContactPage() {
           </div>
         </Card>
       </div>
+
+      {/* 학원 사업자 정보 */}
+      <Card title="학원 정보">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-3 text-sm">
+            <div className="flex items-start gap-3">
+              <Building2 className="w-4 h-4 text-gray-400 mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-700">사업자(법인)명</p>
+                <p className="text-gray-500">㈜코리아정보보안아이티아카데미신촌</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <FileText className="w-4 h-4 text-gray-400 mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-700">사업자번호</p>
+                <p className="text-gray-500">325-88-00678</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <FileText className="w-4 h-4 text-gray-400 mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-700">통신판매업번호</p>
+                <p className="text-gray-500">제2019-서울마포-0303호</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <User className="w-4 h-4 text-gray-400 mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-700">대표자 / 개인정보책임자</p>
+                <p className="text-gray-500">김홍구 / 최인욱</p>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-3 text-sm">
+            <div className="flex items-start gap-3">
+              <Building2 className="w-4 h-4 text-gray-400 mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-700">학원명</p>
+                <p className="text-gray-500">코리아아이티(IT)아카데미학원</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <FileText className="w-4 h-4 text-gray-400 mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-700">학원등록번호</p>
+                <p className="text-gray-500">서울서부 제02201700141호</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <User className="w-4 h-4 text-gray-400 mt-0.5" />
+              <div>
+                <p className="font-medium text-gray-700">교육담당</p>
+                <p className="text-gray-500">신촌코딩학원</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Card>
 
       {/* How to get here */}
       <Card title="교통 안내">
