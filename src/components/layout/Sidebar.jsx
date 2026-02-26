@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { ChevronLeft, ChevronRight, ChevronDown, LogIn } from 'lucide-react'
 import { cn } from '../../utils/cn'
@@ -11,12 +11,12 @@ function NavItem({ item, collapsed, openPath, onToggle }) {
 
   const hasChildren = item.children?.length > 0
   const isCurrentSection = location.pathname === item.path
-  const isOpen = openPath === item.path || isCurrentSection
+  const isOpen = openPath === item.path
 
   function handleParentClick(e) {
     if (hasChildren && !collapsed) {
       e.preventDefault()
-      onToggle(isOpen && !isCurrentSection ? null : item.path)
+      onToggle(isOpen ? null : item.path)
     }
   }
 
@@ -87,8 +87,17 @@ function NavItem({ item, collapsed, openPath, onToggle }) {
 }
 
 export default function Sidebar({ collapsed, onToggle }) {
+  const location = useLocation()
   const { isAuthenticated, isAdmin } = useAuth()
   const [openPath, setOpenPath] = useState(null)
+
+  // 페이지 이동 시: 현재 섹션 드롭다운만 열고 나머지 닫기
+  useEffect(() => {
+    const match = NAV_ITEMS.find(
+      (item) => item.children?.length && location.pathname === item.path
+    )
+    setOpenPath(match ? match.path : null)
+  }, [location.pathname])
 
   return (
     <aside
