@@ -10,7 +10,7 @@ function SafetyRules() {
         {[
           { title: '안전관리 규정', desc: '학원 내 안전관리에 관한 전반적인 규정', icon: ShieldCheck },
           { title: '안전관리 매뉴얼', desc: '비상 상황 대응 매뉴얼 및 행동 요령', icon: FileText },
-          { title: 'EduCom 자위소방대', desc: '자체 소방 조직 구성 및 운영 계획', icon: Flame },
+          { title: 'KoreaIT 자위소방대', desc: '자체 소방 조직 구성 및 운영 계획', icon: Flame },
         ].map((item) => (
           <div key={item.title} className="flex items-start gap-3 p-4 border rounded-lg hover:border-green-200 transition-colors">
             <item.icon className="w-5 h-5 text-green-500 mt-0.5" />

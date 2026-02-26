@@ -80,7 +80,7 @@ function EmploymentSupport() {
 function GalleryContent() {
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold">EduCom 갤러리</h3>
+      <h3 className="text-lg font-semibold">KoreaIT 갤러리</h3>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center">
@@ -98,7 +98,7 @@ export default function StudentPage() {
     { label: '교육훈련 체계도', content: <TrainingSystem /> },
     { label: '모집/홍보', content: <RecruitmentContent /> },
     { label: '취업지원', content: <EmploymentSupport /> },
-    { label: 'EduCom 갤러리', content: <GalleryContent /> },
+    { label: 'KoreaIT 갤러리', content: <GalleryContent /> },
   ]
 
   return (

@@ -59,7 +59,7 @@ export const NAV_ITEMS = [
       { label: '교육훈련 체계도', tab: 0 },
       { label: '모집/홍보', tab: 1 },
       { label: '취업지원', tab: 2 },
-      { label: 'EduCom 갤러리', tab: 3 },
+      { label: 'KoreaIT 갤러리', tab: 3 },
     ],
   },
   {
